@@ -10,6 +10,7 @@ const dbConnection = require("./config/database");
 const categoryRoute = require("./routes/categoryRoute");
 const SubCategoryRoute = require("./routes/SubCategoryRoute");
 const BrandRoute = require("./routes/BrandRoute");
+const ProductRoute = require("./routes/ProductRoute");
 // Connect with db
 dbConnection();
 
@@ -28,6 +29,7 @@ if (process.env.NODE_ENV === "development") {
 app.use("/api/v1/categories", categoryRoute);
 app.use("/api/v1/subcategories", SubCategoryRoute);
 app.use("/api/v1/brands", BrandRoute);
+app.use("/api/v1/products", ProductRoute);
 app.all("*", (req, res, next) => {
   // const err = new Error(`Cannot find this Route: ${req.originalUrl}`);
   // next(err.message);
